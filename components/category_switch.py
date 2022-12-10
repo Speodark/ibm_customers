@@ -21,36 +21,29 @@ def category_switch(column_name, categories, disable_btn=False, id=None, classNa
                 className='category-switch__btn',
                 label="Disable",
             ),
-            # The categories and switch elements
+            # The switch
             html.Div(
-                className='category-switch__container',
+                className='category-switch__switch',
                 children=[
-                    # The switch
-                    html.Div(
-                        className='category-switch__container--switch',
+                    html.Label(
+                        className='switch',
                         children=[
-                            html.Label(
-                                className='switch',
-                                children=[
-                                    dbc.Checkbox(),
-                                    html.Span(className='switch__slider switch__round')
-                                ]
-                            )
+                            dbc.Checkbox(),
+                            html.Span(className='switch__slider switch__round')
                         ]
-                    ),
-                    # The first category element
-                    html.Span(
-                        className='category-switch__container--category',
-                        children=categories[0]
-                    ),
-                    # The second category element
-                    html.Span(
-                        className='category-switch__container--category',
-                        children=categories[1]
                     )
                 ]
             ),
-            
+            # The first category element
+            html.Span(
+                className='category-switch__category category-switch__category--1',
+                children=categories[0]
+            ),
+            # The second category element
+            html.Span(
+                className='category-switch__category category-switch__category--2',
+                children=categories[1]
+            ),
             html.Span(
                 className='category-switch__title',
                 children=column_name
