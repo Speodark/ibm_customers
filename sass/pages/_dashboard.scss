@@ -1,0 +1,21 @@
+.dashboard {
+    // take all available space
+    height: 100%;
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 2rem;
+    // make a grid of 16 by 16
+    display: grid;
+    grid-template-columns: minmax(0, 0.2fr) minmax(0, 1fr);
+    grid-gap: 2rem;
+
+    &__filter {
+        border-right: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+    }
+    
+}
+
