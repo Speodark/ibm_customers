@@ -12,10 +12,41 @@
     &__filter {
         border-right: 1px solid black;
         border-left: 1px solid black;
+        padding: 0 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         overflow-y: auto;
+
+        & > *:not(:last-child) {
+            position: relative;
+            margin-bottom: 2.5rem;
+            &:after {
+                position: absolute;
+                content: '';
+                border-bottom: 0.5px solid silver;
+                width: 70%;
+                transform: translateX(-50%);
+                bottom: -15px;
+                left: 50%;
+            }
+        }
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        grid-template-rows: minmax(0, 0.7fr) minmax(0, 0.1fr) minmax(0, 1fr);
+        gap: 5rem;
+        place-items: center;
+        
+        & .dash-dropdown {
+            width: 100%;
+        }
+        
+        &--kpi {
+            font-size: 110%;
+        }
     }
     
 }

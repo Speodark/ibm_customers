@@ -49,16 +49,24 @@
 }
 
 
-
 .switch {
+    display: grid;
+    place-items: center;
     position: relative;
-    display: inline-block;
     width: 55px;
     height: 25px;
+
+    & .form-check {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
     input {
         opacity: 0;
-        width: 0;
-        height: 0;
+        width: 100%;
+        height: 100%;
     }
 
     & .form-check:has(input:checked) + &__slider {

@@ -25,7 +25,7 @@ def category_switch(column_name, categories, disable_btn=False, id=None, classNa
             html.Div(
                 className='category-switch__switch',
                 children=[
-                    html.Label(
+                    html.Div(
                         className='switch',
                         children=[
                             dbc.Checkbox(),

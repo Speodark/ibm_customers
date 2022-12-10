@@ -79,14 +79,20 @@ body {
     -webkit-transform: rotate(45deg); }
 
 .switch {
+  display: grid;
+  place-items: center;
   position: relative;
-  display: inline-block;
   width: 55px;
   height: 25px; }
+  .switch .form-check {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%; }
   .switch input {
     opacity: 0;
-    width: 0;
-    height: 0; }
+    width: 100%;
+    height: 100%; }
   .switch .form-check:has(input:checked) + .switch__slider {
     background-color: #2196F3; }
   .switch .form-check:has(input:focus) + .switch__slider {
@@ -145,11 +151,11 @@ body {
   flex-direction: column;
   align-items: center; }
   .kpi__value {
-    font-size: 1.8rem;
+    font-size: 1.8em;
     font-weight: 500;
     color: #001737; }
   .kpi__text {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 300;
     color: #2B80FF; }
 
@@ -190,14 +196,15 @@ body {
   display: grid;
   grid-template-columns: repeat(3, min-content);
   grid-template-rows: repeat(3, min-content);
-  gap: 0.5rem;
+  gap: 0.8rem;
   place-items: center;
   justify-items: center;
   width: max-content; }
   .category-switch__title {
     grid-row: 1/2;
     grid-column: 2/3;
-    font-weight: bold; }
+    font-weight: bold;
+    text-transform: capitalize; }
   .category-switch__switch:has(input[type="checkbox"]:not(:checked)) + .category-switch__category {
     text-shadow: 0px 0px 1px black; }
   .category-switch__switch:has(input[type="checkbox"]:checked) + .category-switch__category + .category-switch__category {
@@ -263,7 +270,29 @@ body {
   .dashboard__filter {
     border-right: 1px solid black;
     border-left: 1px solid black;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto; }
+    .dashboard__filter > *:not(:last-child) {
+      position: relative;
+      margin-bottom: 2.5rem; }
+      .dashboard__filter > *:not(:last-child):after {
+        position: absolute;
+        content: '';
+        border-bottom: 0.5px solid silver;
+        width: 70%;
+        transform: translateX(-50%);
+        bottom: -15px;
+        left: 50%; }
+  .dashboard__info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 0.7fr) minmax(0, 0.1fr) minmax(0, 1fr);
+    gap: 5rem;
+    place-items: center; }
+    .dashboard__info .dash-dropdown {
+      width: 100%; }
+    .dashboard__info--kpi {
+      font-size: 110%; }
